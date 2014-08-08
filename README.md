@@ -3,6 +3,11 @@ android-studio-testing-project-template
 
 The goal of this project is to speed up the setup of Robolectric, Robotuim, Roboguice, and Mockito in Android Studio. Since there is not built in support for Robolectric (just yet, hopefully) there is a lot of manual set up that has to be done. This project uses [jeske717's](https://github.com/jeske717) Robolectric-gralde plugin as well as his InjectedTestRunner (more about it later) found on Java Central.
 
+Tested on:
+
+- Mac OSX (Mavericks)
+- Android Studio 0.8.1 and 0.8.5
+
 
 Set Up
 ========================================
@@ -26,6 +31,7 @@ Known Limitations (We will try to fix)
 ========================================
 1. You might encounter some problems when trying to add a new package under `robolectricTest/java/your.app.package`
 2. After you create a new test on a class that already contains tests, sometimes you will need to run the tests twice if you are running all the tests on the class. Syncrhonizing the project also works. It seems that gralde doens't pick up the new added test on the first run. It works on the second run.
+3. Make sure you create the project setting KitKat as `minSdk` to begin with. Tried using a different `minSdk` during the project creation flow and it broke the template. You can change your `minSdk` after you follow the setps above.
 
 
 TODO

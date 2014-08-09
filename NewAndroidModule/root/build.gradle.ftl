@@ -96,7 +96,6 @@ dependencies {
         exclude group: 'org.sonatype.sisu.inject'
     }
     compile 'com.android.support:support-v4:19.1.+'
-    compile 'com.jeskeshouse:injected-test-runner:1.0'
     compile 'com.google.code.gson:gson:2.2.+'
     compile 'com.squareup:otto:1.3.+'
     compile 'com.squareup.picasso:picasso:2.3.+'
@@ -111,6 +110,7 @@ dependencies {
         exclude group: 'com.squareup.okhttp', module: 'okhttp'
     }
     androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.2.1'
+    androidTestCompile 'com.jeskeshouse:injected-test-runner:1.0'
 
     robolectricCompile 'junit:junit:4.10'
     robolectricCompile 'org.mockito:mockito-all:1.9.0'

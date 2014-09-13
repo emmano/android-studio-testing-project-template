@@ -20,7 +20,8 @@ Set Up
 7. Upon restart the `robolectricTest/java` directory should be green. Now you need to run the `configureJUnitDefaultToUseRobolectricClasspath` Gradle task. To do so, go to `View-> Tool Windows->Gradle`. Expand the menu that has the name of your app, and double click on the `configureJUnitDefaultToUseRobolectricClasspath` task. Android studio will prompt the same message as before (requesting to reload the project). Click OK.
 8. After Android Studio reloads, you should syncronize your project. `File->Syncrhonize`.
 9. Run the `MyActivityRobolectricTest.java` inside the robolectricTest module. Right click on the method, `Run>testMethodName()` (the second option on the dropdown; the JUnit one).
-10. If everything is set up correclty, the test should run and pass.
+10. Go to Android Studio > Preferences > Compiler > uncheck "Use in-process build" 
+11. If everything is set up correclty, the test should run and pass.
 
 InjectedTestRunner
 ========================================
@@ -30,7 +31,7 @@ InjectedTestRunner
 Known Limitations (We will try to fix)
 ========================================
 1. You might encounter some problems when trying to add a new package under `robolectricTest/java/your.app.package`
-2. After you create a new test on a class that already contains tests, sometimes you will need to run the tests twice if you are running all the tests on the class. Syncrhonizing the project also works. It seems that gralde doens't pick up the new added test on the first run. It works on the second run.
+2. After you create a new test on a class that already contains tests, sometimes you will need to run the tests twice if you are running all the tests on the class. Syncrhonizing the project also works. It seems that gralde doens't pick up the new added test on the first run. It works on the second run. (Step 10 above should fix this)
 3. Make sure you create the project setting KitKat as `minSdk` to begin with. Tried using a different `minSdk` during the project creation flow and it broke the template. You can change your `minSdk` after you follow the setps above.
 
 

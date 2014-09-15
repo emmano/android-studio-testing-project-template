@@ -1,7 +1,12 @@
 android-studio-testing-project-template
 =======================================
 
-The goal of this project is to speed up the setup of Robolectric, Robotuim, Roboguice, and Mockito in Android Studio. Since there is not built in support for Robolectric (just yet, hopefully) there is a lot of manual set up that has to be done. This project uses [jeske717's](https://github.com/jeske717) Robolectric-gralde plugin as well as his InjectedTestRunner (more about it later) found on Java Central.
+The goal of this project is to speed up the setup of Robolectric, Robotuim, Roboguice, and Mockito in Android Studio. Since there is not built in support for Robolectric (just yet, hopefully) there is a lot of manual set up that has to be done. This project uses [jeske717's](https://github.com/jeske717) Robolectric-gralde plugin as well as his InjectedTestRunner (more about it later) found on Java Center. 
+
+
+### How is this different than the [Deckard-Gradle](https://github.com/robolectric/deckard-gradle) template provided by Robolectric?
+
+Deckard requires you to download their template and then customize things like the name of your project, module name, etc. This template is configured with the information provided when you go through the project creation flow.
 
 Tested on:
 

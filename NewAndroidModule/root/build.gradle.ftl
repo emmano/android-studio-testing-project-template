@@ -24,8 +24,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'robolectric'
 </#if>
 
-
-
 repositories {
         mavenCentral()
         jcenter()
@@ -108,9 +106,7 @@ dependencies {
     }
 
     androidTestProvided 'junit:junit:4.10'
-    androidTestProvided('org.robolectric:robolectric:2.3') {
-        exclude group: 'com.google.android'
-    }
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
 <#if WearprojectName?has_content && NumberOfEnabledFormFactors?has_content && NumberOfEnabledFormFactors gt 1>
     wearApp project(':${WearprojectName}')

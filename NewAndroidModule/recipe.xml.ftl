@@ -11,6 +11,7 @@
     <mkdir at="${escapeXmlAttribute(projectOut)}/libs" />
 
     <mkdir at="${escapeXmlAttribute(projectOut)}/src/androidTestRobotium/java/${packageName}" />
+    <mkdir at="${escapeXmlAttribute(projectOut)}/src/androidTestEspresso/java/${packageName}" />
 
 
     <merge from="settings.gradle.ftl"
@@ -47,11 +48,17 @@
 </#if>
 </#if>
 
-    <instantiate from="res/values/strings.xml.ftl"
+   <instantiate from="res/values/strings.xml.ftl"
                    to="${escapeXmlAttribute(resOut)}/values/strings.xml" />
 
     <instantiate from="test/app_package/ApplicationTest.java.ftl"
                    to="${testOut}/ApplicationTest.java" />
+
+    <instantiate from="test/app_package/RobotiumBasicActivityTest.java.ftl"
+                   to="${escapeXmlAttribute(projectOut)}/src/androidTestRobotium/java/${packageName}/${activityClass}RobotiumTest.java" />
+
+    <instantiate from="test/app_package/EspressoBasicActivityTest.java.ftl"
+                   to="${escapeXmlAttribute(projectOut)}/src/androidTestEspresso/java/${packageName}/${activityClass}EspressoTest.java" />               
     <instantiate from="test/app_package/RobolectricBasicActivityTest.java.ftl"
                    to="${escapeXmlAttribute(projectOut)}/src/robolectricTest/java/${packageName}/${activityClass}RobolectricTest.java"  />
     <instantiate from="app/Application.java.ftl"

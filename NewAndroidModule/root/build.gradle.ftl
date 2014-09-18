@@ -51,6 +51,8 @@ android {
         targetSdkVersion <#if targetApiString?matches("^\\d+$")>${targetApiString}<#else>'${targetApiString}'</#if>
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+
     }
     packagingOptions {
         exclude 'META-INF/LICENSE.txt'
@@ -62,8 +64,8 @@ android {
     }
 
     sourceSets {
-        androidTest.java.srcDirs = ['src/androidTest/java', 'src/androidTestRobotium/java']
-        androidTest.assets.srcDirs = ['src/androidTest/assets', 'src/androidTestRobotium/assets']
+        androidTest.java.srcDirs = ['src/androidTest/java', 'src/androidTestRobotium/java', 'src/androidTestEspresso/java']
+        androidTest.assets.srcDirs = ['src/androidTest/assets', 'src/androidTestRobotium/assets', 'src/androidTestEspresso/assets']
     }
 
 <#if javaVersion?? && javaVersion != "1.6">
@@ -95,8 +97,9 @@ dependencies {
     compile 'com.squareup:otto:1.3.+'
     compile 'com.squareup.picasso:picasso:2.3.+'
     androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.2.1'
-    androidTestCompile 'com.jeskeshouse:injected-test-runner:1.0'
-
+    androidTestProvided 'com.jeskeshouse:injected-test-runner:1.0'
+    androidTestCompile'com.jakewharton.espresso:espresso:1.1-r3'
+    androidTestCompile 'com.jakewharton.espresso:espresso-support-v4:1.1-r3'
     robolectricCompile 'junit:junit:4.10'
     robolectricCompile 'org.mockito:mockito-all:1.9.0'
     robolectricCompile 'com.google.android:android:4.1.1.4'

@@ -26,7 +26,8 @@ Set Up
 8. After Android Studio reloads, you should syncronize your project. `File->Syncrhonize`.
 9. Run the `MyActivityRobolectricTest.java` inside the robolectricTest module. Right click on the method, `Run>testMethodName()` (the second option on the dropdown; the JUnit one).
 10. Go to Android Studio > Preferences > Compiler > uncheck "Use in-process build" 
-11. If everything is set up correclty, the test should run and pass.
+11. As part of the Espresso configuration a custom Run Configuration is needed. They show how to do it on their docs [here](https://code.google.com/p/android-test-kit/wiki/Espresso) (look at the Android Studio picture). Make sure you check the "Show chooser dialog". It defaults to Emulator.
+12. If everything is set up correclty, the test should run and pass.
 
 InjectedTestRunner
 ========================================
@@ -36,12 +37,13 @@ InjectedTestRunner
 Known Limitations (We will try to fix)
 ========================================
 1. You might encounter some problems when trying to add a new package under `robolectricTest/java/your.app.package`
-2. After you create a new test on a class that already contains tests, sometimes you will need to run the tests twice if you are running all the tests on the class. Syncrhonizing the project also works. It seems that gralde doens't pick up the new added test on the first run. It works on the second run. (Step 10 above should fix this)
-3. Make sure you create the project setting KitKat as `minSdk` to begin with. Tried using a different `minSdk` during the project creation flow and it broke the template. You can change your `minSdk` after you follow the setps above.
+2. After you create a new test on a class that already contains tests, sometimes you will need to run the tests twice if you are running all the tests on the class. Synchronizing the project also works. It seems that gralde doesn't pick up the new added test on the first run. It works on the second run. (Step 10 above should fix this)
+3. Make sure you create the project setting KitKat as `minSdk` to begin with. Tried using a different `minSdk` during the project creation flow and it broke the template. You can change your `minSdk` after you follow the steps above.
+4. Specifying to use the GoogleInstrumentationTestRunner in `build.gradle`, as required by Espresso, makes the whole test suite run. Removing `testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"` from `build.gradle`, allows to run Robotium tests independently, but Espresso tests will not run. I will try to find a way to separate the runs.
 
 
 TODO
 ========================================
-1. Add sample Robotium test with basic `Solo` configuration.
+1. Be able to run Robotium and Espresso tests independently
 
 

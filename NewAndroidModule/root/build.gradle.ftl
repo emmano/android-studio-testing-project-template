@@ -36,7 +36,7 @@ repositories {
 
 configurations {
     all*.exclude group: 'org.json'
-    all*.exclude group: 'asm', module: 'asm', version: '3.1'
+    all*.exclude group: 'asm', module: 'asm'
     all*.exclude group: 'stax'
     all*.exclude group: 'xpp3'
 }

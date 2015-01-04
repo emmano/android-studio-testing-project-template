@@ -89,7 +89,7 @@ dependencies {
         exclude group: 'aopalliance'
         exclude group: 'org.sonatype.sisu.inject'
     }
-    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:support-v4:21.0.0'
     androidTestCompile('com.google.dexmaker:dexmaker-mockito:1.0') {
         exclude group: 'com.google.dexmaker', module: 'dexmaker'
     }

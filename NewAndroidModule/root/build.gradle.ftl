@@ -12,7 +12,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:${gradlePluginVersion}'
         classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
-        classpath 'org.jesko.robolectric:robolectric-androidstudio-plugin:1.1.3'
+        classpath 'com.jeskeshouse:robolectric-androidstudio-plugin:2.0.0'
     }
 }
 
@@ -97,7 +97,7 @@ dependencies {
     compile 'com.squareup:otto:1.3.+'
     compile 'com.squareup.picasso:picasso:2.3.+'
     androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.2.1'
-    androidTestProvided 'com.jeskeshouse:injected-test-runner:1.0'
+    androidTestProvided 'com.jeskeshouse:injected-test-runner:2.0.3'
     androidTestCompile'com.jakewharton.espresso:espresso:1.1-r3'
     androidTestCompile 'com.jakewharton.espresso:espresso-support-v4:1.1-r3'
     robolectricCompile 'junit:junit:4.10'

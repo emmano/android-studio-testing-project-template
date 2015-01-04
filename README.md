@@ -12,7 +12,7 @@ Deckard requires you to download their template and then customize things like t
 Tested on:
 
 - Mac OSX (Mavericks)
-- Android Studio 0.8.1 and 0.8.5
+- Android Studio 0.8.1, 0.8.5 and 1.0
 
 
 Set Up
@@ -29,6 +29,7 @@ Set Up
 10. Go to Android Studio > Preferences > Compiler > uncheck "Use in-process build" 
 11. As part of the Espresso configuration a custom Run Configuration is needed. They show how to do it on their docs [here](https://code.google.com/p/android-test-kit/wiki/Espresso) (look at the Android Studio picture). Make sure you check the "Show chooser dialog". It defaults to Emulator.
 12. If everything is set up correclty, the test should run and pass.
+13. Apparently Android Studio 1.0 defaults to `ActionBarActivity` regardless of your `minSdkVersion` selection. Make sure your `MainActivity` extends `Activity` or that you fix the Instrumentation tests to run on older versions of Android.
 
 InjectedTestRunner
 ========================================

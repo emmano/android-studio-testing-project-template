@@ -42,6 +42,7 @@ Known Limitations (We will try to fix)
 2. After you create a new test on a class that already contains tests, sometimes you will need to run the tests twice if you are running all the tests on the class. Synchronizing the project also works. It seems that gralde doesn't pick up the new added test on the first run. It works on the second run. (Step 10 above should fix this)
 3. Make sure you create the project setting KitKat as `minSdk` to begin with. Tried using a different `minSdk` during the project creation flow and it broke the template. You can change your `minSdk` after you follow the steps above.
 4. Specifying to use the GoogleInstrumentationTestRunner in `build.gradle`, as required by Espresso, makes the whole test suite run. Removing `testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"` from `build.gradle`, allows to run Robotium tests independently, but Espresso tests will not run. I will try to find a way to separate the runs.
+5. In order to see the `robolectricTest` folder, you need to switch Android Studio from the `Android View` to the `Project View`
 
 
 TODO
